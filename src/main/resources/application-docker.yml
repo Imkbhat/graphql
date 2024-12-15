@@ -1,3 +1,16 @@
 spring:
   application:
     name: graphql
+
+  threads:
+    virtual:
+      enabled: true
+
+  graphql:
+    graphiql:
+      enabled:
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true

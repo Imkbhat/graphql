@@ -1,0 +1,44 @@
+type Sample {
+    id: ID!, # ! means mandatory
+    name: String!,
+    age: Int,
+    height: Float,
+    isTall: Boolean
+}
+
+interface Animal {
+    legs: Int!,
+    hasFeather: Boolean,
+    color: Color!
+}
+
+type Dog implements Animal {
+    legs: Int!,
+    hasFeather: Boolean,
+    color: Color!,
+    isBark: Boolean!
+}
+
+type Duck implements Animal {
+    legs: Int!,
+    hasFeather: Boolean,
+    color: Color!,
+    wiggleTail : Boolean!
+}
+
+type Lion implements Animal {
+    legs: Int!,
+    hasFeather: Boolean,
+    color: Color!,
+    roar : RoarIntensity!
+}
+
+enum RoarIntensity {
+    LOUD, MODERATE, AVERAGE
+}
+
+enum Color {
+   BROWN, RED, AMBER, GREEN
+}
+
+union DogDuckLion = Dog | Duck | Lion
